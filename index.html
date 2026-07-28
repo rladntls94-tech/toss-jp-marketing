@@ -285,14 +285,14 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
 /* ===== ambient "living HUD" — floats, twinkles, breathing ===== */
 @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 @keyframes brkBreath{0%,100%{opacity:.42}50%{opacity:1}}
-@keyframes bubbleUp{0%{opacity:0;transform:translateY(26px) scale(.4)}14%{opacity:.85;transform:translateY(10px) scale(1)}55%{opacity:.7;transform:translateY(-34px) scale(1.06)}100%{opacity:0;transform:translateY(-98px) scale(1.22)}}
+@keyframes bubbleUp{0%{opacity:0;transform:translate(0,28px) scale(.25)}10%{opacity:.95;transform:translate(-3px,14px) scale(1.12)}20%{transform:translate(4px,4px) scale(.94)}38%{transform:translate(-6px,-18px) scale(1.04)}56%{transform:translate(6px,-40px) scale(.97)}74%{opacity:.85;transform:translate(-5px,-62px) scale(1.05)}90%{opacity:.6;transform:translate(2px,-80px) scale(1.1)}100%{opacity:0;transform:translate(0,-90px) scale(1.75)}}
 @keyframes glowPulse{0%,100%{box-shadow:0 3px 10px rgba(49,130,246,.16)}50%{box-shadow:0 8px 26px rgba(49,130,246,.46)}}
 @keyframes barSheen{0%{transform:translateX(-130%)}55%,100%{transform:translateX(340%)}}
 @keyframes hlBreath{0%,100%{opacity:.78}50%{opacity:1}}
 @keyframes dotPulse{0%{box-shadow:0 0 0 0 rgba(49,130,246,.55)}70%,100%{box-shadow:0 0 0 9px rgba(49,130,246,0)}}
 
 .hero-particles{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
-.hero-particles i{position:absolute;border-radius:50%;background:radial-gradient(circle at 33% 30%,rgba(255,255,255,.95),rgba(49,130,246,.6) 58%,rgba(49,130,246,.22) 100%);box-shadow:inset 0 0 0 1px rgba(49,130,246,.28);opacity:0;will-change:transform;animation-name:bubbleUp;animation-timing-function:ease-in-out;animation-iteration-count:infinite}
+.hero-particles i{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 26%,#fff 0 14%,rgba(255,255,255,.85) 22%,rgba(120,180,255,.55) 55%,rgba(49,130,246,.28) 100%);box-shadow:inset 0 0 0 1px rgba(49,130,246,.3),0 1px 4px rgba(49,130,246,.18);opacity:0;will-change:transform;animation-name:bubbleUp;animation-timing-function:cubic-bezier(.34,1.3,.5,1);animation-iteration-count:infinite}
 .hero .hero-inner{position:relative;z-index:2}
 
 .js .hero-photo{animation:floatY 4.6s ease-in-out infinite}
@@ -851,8 +851,8 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
       pc.className = 'hero-particles'; pc.setAttribute('aria-hidden','true');
       for(var pi=0; pi<24; pi++){
         var d = document.createElement('i');
-        var dur = (Math.random()*3.2 + 3.6);
-        var sz = (Math.random()*10 + 6);
+        var dur = (Math.random()*2.8 + 3.2);
+        var sz = (pi % 3 === 0) ? (Math.random()*5 + 4) : (Math.random()*11 + 8);
         d.style.left = (Math.random()*94 + 3).toFixed(2) + '%';
         d.style.top = (Math.random()*70 + 18).toFixed(2) + '%';
         d.style.width = sz.toFixed(1) + 'px';
