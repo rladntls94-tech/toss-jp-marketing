@@ -404,6 +404,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
 
   /* ── 링크 URL 병기 ── */
   a[href^="http"]::after{content:" (" attr(href) ")";font-size:7pt;color:#666;word-break:break-all}
+  .who-url a::after{content:""!important}
   .nav a::after,.tool-go::after{content:""!important}
   .vid-url::after{content:""!important}
   .vid-url{color:#1B64DA!important;font-size:7.6pt}
