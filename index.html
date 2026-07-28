@@ -309,17 +309,71 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
 .progress{box-shadow:0 0 8px rgba(49,130,246,.55)}
 
 @media print{
+  /* ── 모션·장식 제거 ── */
   .js [data-reveal],.js .rv-wipe{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}
-  .js .idx .idx-bar{width:22px!important}
+  .js .idx .idx-bar{width:20px!important}
   .js .metric.in .mbar span,.mbar span{width:var(--fill,100%)!important}
-  .js .hud-corners i{opacity:1!important;transform:none!important;animation:none!important}
-  .hero-particles,.progress,.vid-sheen,.cta,.nav-links{display:none!important}
-  .nav{position:static!important;background:#fff!important}
-  .cw,.case,.proj{break-inside:avoid;page-break-inside:avoid}
-  .section{break-before:auto}
-  *{animation:none!important}
-  a[href^="http"]::after{content:" (" attr(href) ")";font-size:9px;color:#666;word-break:break-all}
-  body{background:#fff}
+  .hero-particles,.progress,.vid-sheen,.cta,.nav-links,.hud-corners,.vid-play,.vid-rec{display:none!important}
+  *{animation:none!important;box-shadow:none!important}
+  body{background:#fff;font-size:9.3pt;line-height:1.5}
+  @page{size:A4;margin:11mm 10mm}
+
+  /* ── 좌측 인덱스 컬럼 축소 (가로 공간 회수) ── */
+  .hero-inner,.section-inner{grid-template-columns:96px 1fr!important;gap:16px!important;padding:14px 0!important;max-width:100%!important}
+  .qual-inner,.metrics-inner,.footer-inner{padding:10px 0!important;max-width:100%!important}
+  .nav-inner{padding:6px 0!important;height:auto!important;max-width:100%!important}
+  .idx-n{font-size:10pt}.idx-l{font-size:7.5pt;margin-top:4px}
+
+  /* ── 히어로 압축 ── */
+  .hero{padding:10px 0!important;background:#fff!important}
+  .hero h1{font-size:20pt!important;margin-bottom:10px!important;line-height:1.25!important}
+  .hero .lead{font-size:9.8pt!important;margin-bottom:12px!important}
+  .hero-photo{width:56px!important;height:56px!important;margin-bottom:10px!important}
+  .apply-label{padding-bottom:8px;margin-bottom:12px;font-size:8.5pt}
+  .facts{padding-top:8px;margin-bottom:0}
+  .fact{font-size:8.6pt;padding:2px 12px 2px 0;margin-right:12px}
+  .who{font-size:8.4pt}
+
+  /* ── 섹션 간격 압축 ── */
+  .h-title{font-size:14pt!important;margin-bottom:5px!important}
+  .h-desc{font-size:9.5pt!important;margin-bottom:12px!important}
+  .metric{padding:14px 10px!important}
+  .mnum{font-size:16pt!important}.mlab{font-size:7.8pt;margin-top:6px}
+  .qual-t{font-size:11pt;margin-bottom:9px}
+  .qual-i{font-size:9pt;gap:7px}
+  .spike{padding:12px 14px 4px!important}
+  .spike h3{font-size:11pt;margin:8px 0 6px}
+  .spike p,.citem p,.fitrow .jd,.fitrow .me{font-size:8.8pt!important}
+  .citem{padding:12px 16px!important}
+  .citem h4{font-size:10pt;margin-bottom:5px}
+  .proj{padding:12px 0!important;grid-template-columns:88px 1fr!important;gap:16px!important}
+  .proj .pt{font-size:11pt;margin-bottom:8px}
+  .proj li{font-size:8.8pt;margin-bottom:4px}
+  .kpi{font-size:8.4pt}
+  .cw{padding:14px 0!important}
+  .cw-t{font-size:12pt}
+  .cw-grid{gap:18px!important}
+  .cw-step p,.cw-learn p{font-size:8.8pt!important;line-height:1.5!important}
+  .cw-step{padding:8px 0}
+  .case{padding:12px 0!important}
+  .case h3{font-size:11.5pt}
+  .step p{font-size:8.4pt}
+  .investor .lead-q{font-size:14pt!important;margin-bottom:12px}
+  .investor p{font-size:9.3pt}
+  .tool{padding:10px 0!important}
+  .erow{padding:7px 0;font-size:8.8pt}
+  .about{gap:24px!important}
+
+  /* ── 페이지 나눔 규칙 ── */
+  .section{break-before:page;page-break-before:always}
+  #why{break-before:auto;page-break-before:auto}
+  .cw,.case,.proj,.citem,.spike,.qual,.metrics{break-inside:avoid;page-break-inside:avoid}
+  .section-inner{break-inside:auto}
+
+  /* ── 링크 URL 병기 ── */
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:7pt;color:#666;word-break:break-all}
+  .nav a::after,.tool-go::after{content:""!important}
+  .vid-cap::after{content:" · https://www.youtube.com/watch?v=yi6oxIYmppY";font-size:7.5pt;color:#555}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
