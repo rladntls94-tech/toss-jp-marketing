@@ -296,6 +296,19 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
 .js .metric.in .mbar span::after{animation:barSheen 2.8s ease-in-out infinite 1.1s}
 .progress{box-shadow:0 0 8px rgba(49,130,246,.55)}
 
+@media print{
+  .js [data-reveal],.js .rv-wipe{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}
+  .js .idx .idx-bar{width:22px!important}
+  .js .metric.in .mbar span,.mbar span{width:var(--fill,100%)!important}
+  .js .hud-corners i{opacity:1!important;transform:none!important;animation:none!important}
+  .hero-particles,.progress,.vid-sheen{display:none!important}
+  .nav{position:static!important;background:#fff!important}
+  .cw,.case,.proj{break-inside:avoid;page-break-inside:avoid}
+  .section{break-before:auto}
+  *{animation:none!important}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:9px;color:#666;word-break:break-all}
+  body{background:#fff}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js [data-reveal],.js .rv-wipe{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}
@@ -359,8 +372,8 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
 <div class="metrics">
   <div class="metrics-inner">
     <div class="metric" data-reveal style="--rd:0s"><div class="mnum">N1</div><div class="mlab">JLPT 일본어 · JPT 940<br>원어민 · 일본 출생</div></div>
-    <div class="metric" data-reveal style="--rd:.05s"><div class="mnum" data-count="183" data-suffix="%">183%</div><div class="mlab">리테일 패키지 0→1<br>신규 유저 증가</div></div>
-    <div class="metric" data-reveal style="--rd:.1s"><div class="mnum" data-count="140" data-suffix="%">140%</div><div class="mlab">리테일 패키지 0→1<br>웹 방문자 증가</div></div>
+    <div class="metric" data-reveal style="--rd:.05s"><div class="mnum" data-count="183" data-suffix="%">183%</div><div class="mlab">리테일 패키지 0→1<br>글로벌 신규 유저 증가</div></div>
+    <div class="metric" data-reveal style="--rd:.1s"><div class="mnum" data-count="140" data-suffix="%">140%</div><div class="mlab">리테일 패키지 0→1<br>글로벌 웹 방문자 증가</div></div>
     <div class="metric" data-reveal style="--rd:.15s"><div class="mnum" data-count="210" data-suffix="%">210%</div><div class="mlab">세대전환기<br>매출 성장</div></div>
     <div class="metric" data-reveal style="--rd:.2s"><div class="mnum">90→5분</div><div class="mlab">AI 자동화 툴 0→1<br>다국어 검수 단축</div></div>
     <div class="metric" data-reveal style="--rd:.25s"><div class="mnum" data-count="22" data-suffix="%">22%</div><div class="mlab">언어권별 리뷰 분석<br>스팀 긍정 개선</div></div>
@@ -389,7 +402,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
         <div class="spike">
           <div class="no">03</div>
           <h3>일본 시장 인사이트 → 0 to 1 성과</h3>
-          <p>일본 시장 특유의 실물 패키지 선호에서 기회를 포착해 직접 제안하고 출시까지 주도했습니다. 신규 유저 183%, 웹 방문자 140%. 감이 아니라 판매·유저 데이터로 가설을 세우고 검증했습니다.</p>
+          <p>일본 시장 특유의 실물 패키지 선호에서 기회를 포착해 직접 제안하고 출시까지 주도했습니다. 일본에서 출발한 기획이 글로벌 발매로 이어져 신규 유저 183%, 웹 방문자 140%를 기록했습니다.</p>
           <span class="tag">→ 초기 시장 침투 경험</span>
         </div>
       </div>
@@ -407,7 +420,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
         <div class="fitrow"><div class="jd">원어민 수준의 자연스러운 일본어 카피라이팅, 단순 번역을 넘어 뉘앙스까지</div><div class="me"><b>일본 출생 · 일본어 모국어.</b> 7년간 일본 공지·약관·이벤트 문구를 직접 작성, 검수 자동화 툴까지 개발해 프로세스로 정착</div></div>
         <div class="fitrow"><div class="jd">광고 소재와 카피를 직접 기획하고 개선하며, 기획부터 실행 끝단까지</div><div class="me">유저 대상 <b>공식 안내 영상을 일본어 담당으로 기획·직접 출연</b>, 인게임·SNS 이벤트 소재를 일본 유저 반응에 맞춰 설계</div></div>
         <div class="fitrow"><div class="jd">가설 수립 · 캠페인 실험 설계 · 트래킹을 직접 리드하며 성과를 만든 경험</div><div class="me">성장 병목 가설을 <b>지원 이벤트로 먼저 검증한 뒤 상시 전환</b>. 중상위 유저 약 30%가 상위 구간 진입</div></div>
-        <div class="fitrow"><div class="jd">일본 시장의 초기 런칭 및 침투 단계 마케팅 경험</div><div class="me">일본 시장 특유의 실물 패키지 선호를 포착해 직접 제안·출시 주도. <b>신규 유저 183% · 웹 방문자 140% · D30 잔존 38%</b></div></div>
+        <div class="fitrow"><div class="jd">일본 시장의 초기 런칭 및 침투 단계 마케팅 경험</div><div class="me">일본 시장 특유의 실물 패키지 선호를 포착해 직접 제안·출시 주도, 글로벌 발매로 확대. <b>글로벌 신규 유저 183% · 웹 방문자 140% · D30 잔존 38%</b></div></div>
         <div class="fitrow"><div class="jd">마케팅 성과 측정 기준을 수립하고 데이터로 전략을 고도화</div><div class="me">결제·유저 분포·리뷰·CS 데이터를 정기 분석해 <b>기회 영역을 포착하고 가설을 검증</b>, 리뷰 긍정 22% 개선</div></div>
         <div class="fitrow"><div class="jd">AI 툴을 적극 활용해 업무 프로세스를 고도화·효율화</div><div class="me">Python·생성형 AI로 <b>운영 자동화 툴 4종을 0에서 개발·배포</b>. 다국어 검수 90분에서 5분으로 단축</div></div>
         <div class="fitrow"><div class="jd">높은 불확실성과 빠른 방향 전환 속에서도 스스로 우선순위를 정하고 실행</div><div class="me">세대 전환·서비스 종료 같은 고위험 국면에서 우선순위를 판단해 <b>매출 210% 성장, 법적 분쟁 0건</b></div></div>
@@ -426,7 +439,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
       <div class="cols2" data-reveal style="--rd:.12s">
         <div class="citem"><h4><span class="k">01</span>일본어 원어민 카피 · 현지화</h4><p>일본에서 태어나 일본어가 모국어입니다. 공지·약관·이벤트 문구를 번역이 아니라 처음부터 일본어로 작성하며, 7년간 일본 서비스 커뮤니케이션을 지속해오고 있습니다.</p></div>
         <div class="citem"><h4><span class="k">02</span>일본향 크리에이티브 기획·제작</h4><p>유저 대상 공식 안내 영상을 일본어 담당으로 기획하고 직접 출연했으며, 인게임·SNS 이벤트 소재를 일본 유저 반응에 맞춰 설계했습니다.</p></div>
-        <div class="citem"><h4><span class="k">03</span>일본 시장 인사이트 → 0 to 1</h4><p>일본 시장 특유의 실물 패키지 선호에서 기회를 포착해 직접 제안하고 출시까지 주도했습니다. 신규 유저 183%, 웹 방문자 140%.</p></div>
+        <div class="citem"><h4><span class="k">03</span>일본 시장 인사이트 → 0 to 1</h4><p>일본 시장 특유의 실물 패키지 선호에서 기회를 포착해 직접 제안하고 출시까지 주도했습니다. 글로벌 신규 유저 183%, 웹 방문자 140%.</p></div>
         <div class="citem"><h4><span class="k">04</span>가설 · 실험 · 검증 사이클</h4><p>결제·유저 분포·리뷰·CS 데이터로 가설을 세우고, 이벤트로 먼저 효과를 검증한 뒤 유효성이 확인되면 상시 정책으로 전환해 왔습니다.</p></div>
         <div class="citem"><h4><span class="k">05</span>AI 툴 활용 · 업무 자동화</h4><p>Python과 생성형 AI로 운영 자동화 툴 4종을 0에서 기획·개발·배포했습니다. 다국어 검수 시간을 90분에서 5분으로 줄였습니다.</p></div>
         <div class="citem"><h4><span class="k">06</span>인하우스 크로스펑셔널 협업</h4><p>개발·기획·프로그램·정책·QA와 소니·마이크로소프트 등 외부 파트너, 도쿄·LA 오피스 사이에서 복잡한 이슈를 구조화하고 방향을 합의해 왔습니다.</p></div>
@@ -481,7 +494,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
           <div class="date">2020.05<br>~ 2020.11</div>
           <div class="proj-b">
             <div class="pt">리테일 패키지 발매 기획 · 0 to 1</div>
-            <div class="kpis"><span class="kpi">신규 유저 183%</span><span class="kpi">웹 방문자 140%</span><span class="kpi">D30 잔존율 38%</span></div>
+            <div class="kpis"><span class="kpi">글로벌 신규 유저 183%</span><span class="kpi">웹 방문자 140%</span><span class="kpi">D30 잔존율 38%</span></div>
             <ul>
               <li>일본 시장 특유의 실물 패키지 선호에서 기회를 포착해 <b>직접 제안하고 설득한 프로젝트</b>: 문제 정의부터 출시까지 주도</li>
               <li>판매 데이터 분석으로 구성품 선별·에디션 기획, 플랫폼·국가별 환율 특이점을 테스트 환경에서 시뮬레이션해 결제 오류 사전 차단</li>
@@ -620,7 +633,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
 
       <div class="cw" data-reveal>
         <div class="cw-top">
-          <div class="cw-t">일본 리테일 패키지 기획</div>
+          <div class="cw-t">리테일 패키지 기획 (일본 시장 인사이트 발)</div>
           <span class="cw-role">직접 제안 · 출시 주도</span>
         </div>
         <p class="cw-sub">실물 한정판 에디션 · 2020</p>
@@ -637,7 +650,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
               </div>
               <div class="cw-step">
                 <div class="cw-k">Hypothesis</div>
-                <p>일본 유저의 <b>실물 선호를 겨냥한 패키지를 내면, 기존 다운로드 유저와 겹치지 않는 신규 유입</b>을 만들 수 있다고 봤습니다.</p>
+                <p>일본 유저의 <b>실물 선호를 겨냥한 패키지를 내면, 기존 다운로드 유저와 겹치지 않는 신규 유입</b>을 만들 수 있다고 봤습니다. 이 가설을 근거로 글로벌 발매까지 확대했습니다.</p>
               </div>
               <div class="cw-step">
                 <div class="cw-k">Execution</div>
@@ -645,7 +658,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
               </div>
               <div class="cw-step res">
                 <div class="cw-k">Result</div>
-                <p>신규 유저 <b>183%</b> · 웹 방문자 <b>140%</b> · D30 잔존율 <b>38%</b></p>
+                <p>글로벌 신규 유저 <b>183%</b> · 웹 방문자 <b>140%</b> · D30 잔존율 <b>38%</b></p>
               </div>
             </div>
             <div class="cw-learn">
@@ -732,10 +745,10 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
       <h2 class="h-title" data-reveal>직접 만든 도구</h2>
       <p class="h-desc" data-reveal style="--rd:.06s">Python·생성형 AI로 반복 실무를 0에서 자동화한 웹 툴 4종 · 검수 90분 → 5분</p>
       <div class="tools" data-reveal style="--rd:.12s">
-        <a class="tool" href="https://rladntls94-tech.github.io/OPtools" target="_blank"><div><div class="tool-h">한국어 검출기</div><div class="tool-d">다국어 텍스트의 한국어 잔류 문자열 자동 검출. 검수 90분→5분의 주역</div></div><div class="tool-go">사용해보기 ↗</div></a>
-        <a class="tool" href="https://rladntls94-tech.github.io/OPtools" target="_blank"><div><div class="tool-h">다국어 생성기</div><div class="tool-d">한국어 소스를 언어별 소스로 자동 치환</div></div><div class="tool-go">사용해보기 ↗</div></a>
-        <a class="tool" href="https://rladntls94-tech.github.io/OPtools" target="_blank"><div><div class="tool-h">콘솔 키 변환기</div><div class="tool-d">PC 조작키 표기를 콘솔 버튼 표기로 일괄 변환</div></div><div class="tool-go">사용해보기 ↗</div></a>
-        <a class="tool" href="https://rladntls94-tech.github.io/OPtools" target="_blank"><div><div class="tool-h">UserReport 뷰어</div><div class="tool-d">ZIP 속 유저 리포트 열람·정리 보조 툴</div></div><div class="tool-go">사용해보기 ↗</div></a>
+        <a class="tool" href="https://rladntls94-tech.github.io/korean-checker/" target="_blank" rel="noopener"><div><div class="tool-h">한국어 검출기</div><div class="tool-d">다국어 텍스트의 한국어 잔류 문자열 자동 검출. 검수 90분→5분의 주역</div></div><div class="tool-go">사용해보기 ↗</div></a>
+        <a class="tool" href="https://rladntls94-tech.github.io/multilang-generator/" target="_blank" rel="noopener"><div><div class="tool-h">다국어 생성기</div><div class="tool-d">한국어 소스를 언어별 소스로 자동 치환</div></div><div class="tool-go">사용해보기 ↗</div></a>
+        <a class="tool" href="https://rladntls94-tech.github.io/console-key-converter/" target="_blank" rel="noopener"><div><div class="tool-h">콘솔 키 변환기</div><div class="tool-d">PC 조작키 표기를 콘솔 버튼 표기로 일괄 변환</div></div><div class="tool-go">사용해보기 ↗</div></a>
+        <a class="tool" href="https://rladntls94-tech.github.io/userreport-tool/" target="_blank" rel="noopener"><div><div class="tool-h">UserReport 뷰어</div><div class="tool-d">ZIP 속 유저 리포트 열람·정리 보조 툴</div></div><div class="tool-go">사용해보기 ↗</div></a>
       </div>
     </div>
   </div>
