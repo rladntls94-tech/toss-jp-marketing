@@ -65,7 +65,7 @@ section[id],.hero{scroll-margin-top:70px}
 .fact:not(:last-child){border-right:1px solid var(--line)}
 .fact b{color:var(--ink);font-weight:700}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
-.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:13px 22px;border-radius:2px;transition:background .15s,color .15s,transform .12s}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:13px 22px;border-radius:2px;font-family:inherit;cursor:pointer;background:none;border:0;transition:background .15s,color .15s,transform .12s}
 .btn-primary{background:var(--blue);color:#fff}
 .btn-primary:hover{background:var(--blue-dark);transform:translateY(-1px)}
 .btn-ghost{border:1px solid var(--rule);color:var(--ink)}
@@ -285,14 +285,14 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
 /* ===== ambient "living HUD" — floats, twinkles, breathing ===== */
 @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 @keyframes brkBreath{0%,100%{opacity:.42}50%{opacity:1}}
-@keyframes floatTwinkle{0%{opacity:0;transform:translateY(8px) scale(.4)}45%{opacity:.9;transform:translateY(-6px) scale(1)}100%{opacity:0;transform:translateY(-22px) scale(.4)}}
+@keyframes rainFall{0%{opacity:0;transform:translate3d(0,-14vh,0)}8%{opacity:.7}88%{opacity:.5}100%{opacity:0;transform:translate3d(0,116vh,0)}}
 @keyframes glowPulse{0%,100%{box-shadow:0 3px 10px rgba(49,130,246,.16)}50%{box-shadow:0 8px 26px rgba(49,130,246,.46)}}
 @keyframes barSheen{0%{transform:translateX(-130%)}55%,100%{transform:translateX(340%)}}
 @keyframes hlBreath{0%,100%{opacity:.78}50%{opacity:1}}
 @keyframes dotPulse{0%{box-shadow:0 0 0 0 rgba(49,130,246,.55)}70%,100%{box-shadow:0 0 0 9px rgba(49,130,246,0)}}
 
 .hero-particles{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
-.hero-particles i{position:absolute;border-radius:50%;background:var(--blue);opacity:0;animation-name:floatTwinkle;animation-timing-function:ease-in-out;animation-iteration-count:infinite}
+.hero-particles i{position:absolute;top:0;border-radius:999px;background:linear-gradient(180deg,rgba(49,130,246,0),var(--blue));opacity:0;will-change:transform;animation-name:rainFall;animation-timing-function:linear;animation-iteration-count:infinite}
 .hero .hero-inner{position:relative;z-index:2}
 
 .js .hero-photo{animation:floatY 4.6s ease-in-out infinite}
@@ -313,7 +313,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
   .js .idx .idx-bar{width:22px!important}
   .js .metric.in .mbar span,.mbar span{width:var(--fill,100%)!important}
   .js .hud-corners i{opacity:1!important;transform:none!important;animation:none!important}
-  .hero-particles,.progress,.vid-sheen{display:none!important}
+  .hero-particles,.progress,.vid-sheen,.cta,.nav-links{display:none!important}
   .nav{position:static!important;background:#fff!important}
   .cw,.case,.proj{break-inside:avoid;page-break-inside:avoid}
   .section{break-before:auto}
@@ -373,7 +373,9 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
         <div class="fact">업무 개선을 위한 <b>AI툴 4종</b> 개발/활용</div>
       </div>
       <div class="cta" data-reveal style="--rd:.36s">
-        <a class="btn btn-primary" href="https://rladntls94-tech.github.io/OPtools" target="_blank">직접 만든 운영 자동화 툴 4종 ↗</a>
+        <a class="btn btn-primary" href="https://rladntls94-tech.github.io/OPtools" target="_blank" rel="noopener">직접 만든 운영 자동화 툴 4종 ↗</a>
+        <button class="btn btn-ghost" type="button" id="btn-print">이 포트폴리오 PDF로 저장</button>
+        <a class="btn btn-ghost" href="경력기술서_김우신_JP마케팅.pdf" target="_blank" rel="noopener">경력기술서 PDF ↗</a>
         <a class="btn btn-ghost" href="mailto:kimboard@naver.com">kimboard@naver.com</a>
       </div>
       <p class="who" data-reveal style="--rd:.44s">펄어비스 2019.07 ~ 재직 중</p>
@@ -847,16 +849,17 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
     if(!reduce){
       var pc = document.createElement('div');
       pc.className = 'hero-particles'; pc.setAttribute('aria-hidden','true');
-      for(var pi=0; pi<18; pi++){
+      for(var pi=0; pi<40; pi++){
         var d = document.createElement('i');
-        var dur = (Math.random()*3.5 + 3.5);
-        var sz = (Math.random()*3 + 2).toFixed(1);
-        d.style.left = (Math.random()*96 + 2).toFixed(2) + '%';
-        d.style.top = (Math.random()*82 + 10).toFixed(2) + '%';
-        d.style.width = sz + 'px'; d.style.height = sz + 'px';
+        var dur = (Math.random()*1.6 + 1.5);
+        var w = (Math.random()*2.4 + 2.2);
+        var hgt = w * (Math.random()*5 + 7);
+        d.style.left = (Math.random()*98 + 1).toFixed(2) + '%';
+        d.style.width = w.toFixed(1) + 'px';
+        d.style.height = hgt.toFixed(1) + 'px';
         d.style.animationDuration = dur.toFixed(2) + 's';
         d.style.animationDelay = (-Math.random()*dur).toFixed(2) + 's';
-        if(pi % 3 === 0){ d.style.background = 'var(--g400)'; }
+        if(pi % 4 === 0){ d.style.background = 'linear-gradient(180deg,rgba(139,149,161,0),var(--g400))'; }
         pc.appendChild(d);
       }
       hero.insertBefore(pc, hero.firstChild);
@@ -876,6 +879,9 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
   });
 
   /* ---- click-to-play video (loads YouTube only on demand) ---- */
+  var pb = document.getElementById('btn-print');
+  if(pb) pb.addEventListener('click', function(){ window.print(); });
+
   var vidBtn = document.querySelector('.vid-frame');
   if(vidBtn){
     /* YouTube blocks embeds from a null origin (file://), so play inline only
