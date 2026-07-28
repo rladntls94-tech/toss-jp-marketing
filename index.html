@@ -868,7 +868,10 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
   if(h1) h1.classList.add('rv-wipe');
   document.querySelectorAll('.h-title').forEach(function(el){ el.classList.add('rv-wipe'); });
   document.querySelectorAll('.idx').forEach(function(el){ el.setAttribute('data-reveal',''); });
-  document.querySelectorAll('.idx-n,.idx-l,.hero .role,.brand .role').forEach(function(el){ el.setAttribute('data-scramble',''); });
+  document.querySelectorAll('.idx-n,.idx-l,.hero .role,.brand .role').forEach(function(el){
+    // 한글이 포함된 라벨은 스크램블 제외 (문자셋이 영문뿐이라 글자가 깨짐)
+    if(!/[\uAC00-\uD7A3]/.test(el.textContent)) el.setAttribute('data-scramble','');
+  });
   var fills = ['92%','84%','60%','72%','80%','100%'];
   document.querySelectorAll('.metric').forEach(function(m,i){
     m.style.setProperty('--fill', fills[i] || '100%');
