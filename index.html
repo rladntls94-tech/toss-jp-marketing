@@ -175,7 +175,8 @@ section[id],.hero{scroll-margin-top:70px}
 .vid-sheen{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(100deg,transparent 42%,rgba(255,255,255,.22) 50%,transparent 58%);transform:translateX(-100%);transition:transform .75s ease}
 .vid-frame:hover .vid-sheen{transform:translateX(100%)}
 .vid-iframe{width:100%;aspect-ratio:16/9;display:block;border:1px solid var(--line);border-radius:2px;background:#000}
-.vid-cap{font-family:var(--mono);font-size:11.5px;color:var(--g500);margin-top:12px;letter-spacing:.01em}
+.vid-cap{font-family:var(--mono);font-size:11.5px;color:var(--g500);margin-top:12px;letter-spacing:.01em;line-height:1.7}
+.vid-url{color:var(--blue-dark);word-break:break-all}
 
 /* creative work blocks */
 .cw{padding:34px 0;border-bottom:1px solid var(--line)}
@@ -365,15 +366,15 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
   .about{gap:24px!important}
 
   /* ── 페이지 나눔 규칙 ── */
-  .section{break-before:page;page-break-before:always}
-  #why{break-before:auto;page-break-before:auto}
+  .section{break-before:auto}
   .cw,.case,.proj,.citem,.spike,.qual,.metrics{break-inside:avoid;page-break-inside:avoid}
   .section-inner{break-inside:auto}
 
   /* ── 링크 URL 병기 ── */
   a[href^="http"]::after{content:" (" attr(href) ")";font-size:7pt;color:#666;word-break:break-all}
   .nav a::after,.tool-go::after{content:""!important}
-  .vid-cap::after{content:" · https://www.youtube.com/watch?v=yi6oxIYmppY";font-size:7.5pt;color:#555}
+  .vid-url::after{content:""!important}
+  .vid-url{color:#1B64DA!important;font-size:7.6pt}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -682,7 +683,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
                 <span class="vid-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
                 <span class="vid-rec" aria-hidden="true"><b></b>일본어 담당 출연</span>
               </button>
-              <p class="vid-cap">YouTube에서 재생 · 펄어비스 검은사막 콘솔 공식 채널</p>
+              <p class="vid-cap">펄어비스 검은사막 콘솔 공식 채널<br><a class="vid-url" href="https://www.youtube.com/watch?v=yi6oxIYmppY" target="_blank" rel="noopener">https://www.youtube.com/watch?v=yi6oxIYmppY</a></p>
             </div>
           </div>
           <div>
