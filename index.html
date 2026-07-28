@@ -72,6 +72,18 @@ section[id],.hero{scroll-margin-top:70px}
 .btn-ghost:hover{background:var(--ink);color:#fff}
 .who{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--g500)}
 
+/* qualify band — 서류패스 조건 충족 */
+.qual{border-bottom:1px solid var(--line);background:#FAFBFC}
+.qual-inner{max-width:var(--maxw);margin:0 auto;padding:34px var(--pad);display:grid;grid-template-columns:170px 1fr;gap:48px;align-items:start}
+.qual-l{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-dark);line-height:1.7}
+.qual-l b{display:block;color:var(--ink);font-size:13px;letter-spacing:.02em;text-transform:none;margin-top:6px}
+.qual-t{font-size:17px;font-weight:800;letter-spacing:-.025em;margin-bottom:16px;line-height:1.45}
+.qual-list{display:grid;gap:12px}
+.qual-i{display:grid;grid-template-columns:16px 1fr;gap:10px;font-size:14.5px;color:var(--g600);line-height:1.6}
+.qual-i span{color:var(--blue);font-weight:800}
+.qual-i b{color:var(--ink);font-weight:700}
+@media(max-width:860px){.qual-inner{grid-template-columns:1fr;gap:18px;padding:28px var(--pad)}}
+
 /* metrics */
 .metrics{border-bottom:1px solid var(--line)}
 .metrics-inner{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:repeat(6,1fr)}
@@ -369,6 +381,20 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
   </div>
 </header>
 
+<div class="qual">
+  <div class="qual-inner">
+    <div class="qual-l" data-reveal>서류패스 조건 ②<b>일본향 광고 소재<br>기획·제작 가능</b></div>
+    <div data-reveal style="--rd:.06s">
+      <div class="qual-t">일본 유저를 대상으로 한 캠페인·영상·상품을 직접 기획하고, 일본어 카피를 직접 썼습니다.</div>
+      <div class="qual-list">
+        <div class="qual-i"><span>01</span><div><b>PS4 랭킹 1위 기념 리트윗 캠페인</b> · 직접 기획·제안, 일본어 배너 문구와 트윗 카피 작성 → 리트윗 약 1,000건 · 팔로워 약 1,500명 증가</div></div>
+        <div class="qual-i"><span>02</span><div><b>차세대 전환 감사 · 로드맵 선공개 영상</b> · 기획부터 일본어 스크립트 작성까지 직접 수행, 개발자와 동반 출연</div></div>
+        <div class="qual-i"><span>03</span><div><b>리테일 패키지</b> · 일본 시장 특유의 실물 선호에서 기회를 포착해 직접 제안하고 출시까지 주도</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="metrics">
   <div class="metrics-inner">
     <div class="metric" data-reveal style="--rd:0s"><div class="mnum">N1</div><div class="mlab">JLPT 일본어 · JPT 940<br>원어민 · 일본 출생</div></div>
@@ -505,7 +531,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
           <div class="date">2019.10<br>~ 2020.05</div>
           <div class="proj-b">
             <div class="pt">한국 콘솔 최초 MMORPG 크로스플레이 론칭</div>
-            <div class="kpis"><span class="kpi">PS Partner Awards 2020 수상</span><span class="kpi">복귀 350% · 신규 250% · 일간 활성 126%</span></div>
+            <div class="kpis"><span class="kpi">PS Partner Awards 2020 팀 수상</span><span class="kpi">복귀 350% · 신규 250% · 일간 활성 126%</span></div>
             <ul>
               <li>PS/XB 제출 프로세스 파악, 출시 일정 역산과 부서별 R&R 시각화·일일 체크리스트로 목표 3일 전 오픈 준비 완료</li>
               <li>부정 자동화 프로그램 대응 프로세스 설계: 신고 → 모니터링 → 운영자 3회 검증 → 증거 확보 → 제재, 후속 분쟁 0건</li>
@@ -773,6 +799,23 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
         <div>
           <h4>나를 한 마디로</h4>
           <p>한국인 어머니와 일본인 아버지 사이에서 일본에서 태어나 초등학교까지 일본 학교를 다녔고, 일본어와 한국어 모두 모국어입니다.<br><br>서비스의 신뢰는 화려한 이벤트가 아니라 사고 없는 하루하루의 축적에서 나온다고 믿습니다. 그리고 그 신뢰가 단 한 번의 실수로 무너질 수 있다는 것도 잘 알고 있습니다. 일본 유저가 안심하고 쓸 수 있는 직관적이고 편리한 투자 경험을, 데이터와 일본 원어민의 감각으로 만들고 싶습니다.</p>
+        </div>
+      </div>
+
+      <div class="about" data-reveal style="--rd:.18s;margin-top:34px">
+        <div>
+          <h4>사용 도구</h4>
+          <div class="erow"><span class="k">분석 · 데이터</span><span class="v">Google Analytics · 사내 BI · Excel · Google Sheets</span></div>
+          <div class="erow"><span class="k">개발 · 자동화</span><span class="v">Python · VS Code · 생성형 AI(Claude·GPT)</span></div>
+          <div class="erow"><span class="k">협업 · 관리</span><span class="v">Slack · JIRA · 자체 어드민 툴 · Google Docs</span></div>
+          <div class="erow"><span class="k">플랫폼 · 스토어</span><span class="v">PlayStation Partners · Microsoft Partner Center · Steam</span></div>
+          <div class="erow"><span class="k">문서 · 규제</span><span class="v">운영정책 · 약관 · EULA · 일본 자금결제법 · CERO</span></div>
+        </div>
+        <div>
+          <h4>언어</h4>
+          <div class="erow"><span class="k">일본어</span><span class="v">모국어 · 일본 출생 · JLPT N1</span></div>
+          <div class="erow"><span class="k">한국어</span><span class="v">모국어</span></div>
+          <p style="margin-top:16px">공지·약관·이벤트 문구 작성, 영상 스크립트 작성, 통역·번역, 도쿄 오피스 협업을 원어민으로 직접 수행해 왔습니다.</p>
         </div>
       </div>
     </div>
