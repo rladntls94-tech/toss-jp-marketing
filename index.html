@@ -371,8 +371,16 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
 
   /* ── 페이지 나눔 규칙 ── */
   .section{break-before:auto}
-  .cw,.case,.proj,.citem,.spike,.qual,.metrics{break-inside:avoid;page-break-inside:avoid}
+  /* 큰 블록은 분할 허용, 작은 단위만 보호 → 페이지 끝 공백 방지 */
+  .cw,.case{break-inside:auto!important;page-break-inside:auto!important}
+  .proj,.citem,.spike,.qual,.metrics{break-inside:avoid;page-break-inside:avoid}
+  .cw-shot,.vid,.cw-step,.cw-learn,.flow,.kpis{break-inside:avoid;page-break-inside:avoid}
   .section-inner{break-inside:auto}
+  /* 제목이 홀로 남지 않게 */
+  .h-title,.h-desc,.cw-top,.cw-sub,.case h3,.case .sub{break-after:avoid;page-break-after:avoid}
+  /* 스크린샷이 한 페이지를 넘지 않도록 */
+  .cw-shot{max-height:132mm!important;object-fit:contain;object-position:top}
+  .vid-thumb{max-height:96mm!important}
 
   /* ── 한글 줄바꿈·간격 정리 ── */
   h1,h2,h3,h4,.h-title,.cw-t,.spike h3,.citem h4,.qual-t,.proj .pt,.case h3,.mlab,.fact,.tool-h{word-break:keep-all!important}
