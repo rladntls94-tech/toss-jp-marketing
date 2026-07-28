@@ -320,10 +320,14 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
   @page{size:A4;margin:11mm 10mm}
 
   /* ── 좌측 인덱스 컬럼 축소 (가로 공간 회수) ── */
-  .hero-inner,.section-inner{grid-template-columns:96px 1fr!important;gap:16px!important;padding:14px 0!important;max-width:100%!important}
+  .hero-inner,.section-inner{grid-template-columns:124px 1fr!important;gap:18px!important;padding:13px 0!important;max-width:100%!important}
   .qual-inner,.metrics-inner,.footer-inner{padding:10px 0!important;max-width:100%!important}
+  .qual-inner{grid-template-columns:124px 1fr!important;gap:18px!important}
+  .qual-l b{font-size:9.4pt;margin-top:3px}
+  .qual-list{gap:6px!important}
   .nav-inner{padding:6px 0!important;height:auto!important;max-width:100%!important}
-  .idx-n{font-size:10pt}.idx-l{font-size:7.5pt;margin-top:4px}
+  .idx-n{font-size:10pt}.idx-l{font-size:7.4pt;margin-top:4px;letter-spacing:.04em!important}
+  .hero-idx .rom,.hero-idx .role,.brand .role,.qual-l{letter-spacing:.01em!important;word-break:keep-all}
 
   /* ── 히어로 압축 ── */
   .hero{padding:10px 0!important;background:#fff!important}
@@ -369,6 +373,25 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
   .section{break-before:auto}
   .cw,.case,.proj,.citem,.spike,.qual,.metrics{break-inside:avoid;page-break-inside:avoid}
   .section-inner{break-inside:auto}
+
+  /* ── 한글 줄바꿈·간격 정리 ── */
+  h1,h2,h3,h4,.h-title,.cw-t,.spike h3,.citem h4,.qual-t,.proj .pt,.case h3,.mlab,.fact,.tool-h{word-break:keep-all!important}
+  .metrics-inner{grid-template-columns:repeat(3,1fr)!important}
+  .metric{padding:10px 12px!important;border-top:none!important}
+  .metric:nth-child(n+4){border-top:1px solid var(--line)!important}
+  .mbar{margin-top:8px!important;height:2px}
+  .spike{border-left:1px solid var(--line)!important}
+  .spike:first-child{border-left:none!important}
+  .idx{padding-top:2px}
+  .section-inner>.section-body>.h-title:first-child{margin-top:0}
+  .qual{background:#F7F9FB!important}
+  .investor{padding:20px 22px!important;background:#F2F6FC!important;color:#111!important}
+  .investor .lead-q{color:#111!important;border-left-color:var(--blue)!important}
+  .investor p,.investor .quote{color:#333!important}
+  .investor .sec-tag,.qual-l{color:#1B64DA!important}
+  footer{background:#fff!important;color:#111!important;border-top:2px solid #111}
+  .fname{color:#111!important}.fmeta{color:#555!important}.fnote{color:#666!important}
+  .fmeta a{color:#1B64DA!important}
 
   /* ── 링크 URL 병기 ── */
   a[href^="http"]::after{content:" (" attr(href) ")";font-size:7pt;color:#666;word-break:break-all}
@@ -683,7 +706,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
                 <span class="vid-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
                 <span class="vid-rec" aria-hidden="true"><b></b>일본어 담당 출연</span>
               </button>
-              <p class="vid-cap">펄어비스 검은사막 콘솔 공식 채널<br><a class="vid-url" href="https://www.youtube.com/watch?v=yi6oxIYmppY" target="_blank" rel="noopener">https://www.youtube.com/watch?v=yi6oxIYmppY</a></p>
+              <p class="vid-cap"><span class="vid-note">펄어비스 검은사막 콘솔 공식 채널</span><br><a class="vid-url" href="https://www.youtube.com/watch?v=yi6oxIYmppY" target="_blank" rel="noopener">https://www.youtube.com/watch?v=yi6oxIYmppY</a></p>
             </div>
           </div>
           <div>
@@ -944,8 +967,8 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
     /* YouTube blocks embeds from a null origin (file://), so play inline only
        when served over http(s); locally, open the video on YouTube instead. */
     var canEmbed = location.protocol === 'http:' || location.protocol === 'https:';
-    var vidCap = document.querySelector('.vid-cap');
-    if(!canEmbed && vidCap) vidCap.textContent = 'YouTube 새 탭에서 재생 · 펄어비스 검은사막 콘솔 공식 채널';
+    var vidNote = document.querySelector('.vid-note');
+    if(!canEmbed && vidNote) vidNote.textContent = '펄어비스 검은사막 콘솔 공식 채널 · 새 탭에서 재생';
     vidBtn.addEventListener('click', function(){
       var id = vidBtn.getAttribute('data-yt');
       if(!canEmbed){
@@ -999,13 +1022,16 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
     document.querySelectorAll('[data-scramble]').forEach(function(el){ so.observe(el); });
   }
 
+  var countLocked = false;
   function animateCount(el){
+    if(countLocked) return;
     var target = parseFloat(el.getAttribute('data-count'));
     var prefix = el.getAttribute('data-prefix') || '';
     var suffix = el.getAttribute('data-suffix') || '';
     var dur = 1200, start = null;
     function step(ts){
       if(start === null) start = ts;
+      if(countLocked){ el.textContent = prefix + target + suffix; return; }
       var p = Math.min((ts - start) / dur, 1);
       var eased = 1 - Math.pow(1 - p, 3);
       el.textContent = prefix + Math.round(target * eased) + suffix;
@@ -1014,6 +1040,17 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--blue);outline-offset:
     }
     requestAnimationFrame(step);
   }
+  function finalizeCounts(){
+    countLocked = true;
+    document.querySelectorAll('[data-count]').forEach(function(el){
+      var t=el.getAttribute('data-count'),
+          pre=el.getAttribute('data-prefix')||'', suf=el.getAttribute('data-suffix')||'';
+      el.textContent = pre + t + suf;
+    });
+  }
+  window.addEventListener('beforeprint', finalizeCounts);
+  setTimeout(finalizeCounts, 2600);   // 인쇄·캡처 타이밍 대비 안전장치
+
   var metrics = document.querySelector('.metrics');
   if(metrics && hasIO && !reduce){
     var counted = false;

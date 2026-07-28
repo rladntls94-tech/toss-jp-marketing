@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>김우신 · 이력서 및 경력기술서</title>
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+:root{
+  --ink:#111417; --g800:#333D4B; --g600:#4E5968; --g500:#6B7684; --g400:#8B95A1;
+  --line:#E6E8EB; --blue:#3182F6; --blue-dark:#1B64DA;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+@page{size:A4;margin:13mm 12mm}
+body{font-family:'Pretendard','Apple SD Gothic Neo',sans-serif;color:var(--ink);
+     font-size:9.1pt;line-height:1.55;letter-spacing:-.01em;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+h1,h2,h3,h4,p,li,td,th,div{word-break:keep-all}
+
+/* 문서 머리 */
+.doc{padding-bottom:2px}
+.doc+.doc{break-before:page;page-break-before:always;padding-top:2px}
+.dhead{display:flex;justify-content:space-between;align-items:flex-end;
+       border-bottom:2px solid var(--ink);padding-bottom:7px;margin-bottom:14px}
+.dtitle{font-size:19pt;font-weight:800;letter-spacing:-.03em;line-height:1}
+.dsub{font-size:7.9pt;color:var(--g500);text-align:right;line-height:1.55;max-width:62%}
+.dsub b{color:var(--blue-dark);font-weight:700}
+
+/* 섹션 */
+.sec{display:grid;grid-template-columns:82px 1fr;gap:14px;
+     padding:11px 0;border-bottom:1px solid var(--line);break-inside:avoid}
+.sec:last-child{border-bottom:none}
+.slab{font-family:var(--mono);font-size:7.4pt;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--g400);padding-top:2px}
+.slab b{display:block;font-family:'Pretendard',sans-serif;font-size:9.3pt;letter-spacing:-.01em;
+        text-transform:none;color:var(--ink);font-weight:700;margin-top:3px}
+
+/* 표 */
+table{width:100%;border-collapse:collapse}
+td,th{padding:4px 8px 4px 0;vertical-align:top;font-size:8.8pt}
+th{text-align:left;font-family:var(--mono);font-size:7.2pt;letter-spacing:.07em;
+   text-transform:uppercase;color:var(--g400);font-weight:500;border-bottom:1px solid var(--line);padding-bottom:5px}
+tbody tr+tr td{border-top:1px solid #F1F3F5}
+.k{color:var(--g500);width:74px;white-space:nowrap}
+.num{font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:8.2pt;color:var(--g600);white-space:nowrap}
+
+/* 불릿 */
+ul{list-style:none}
+li{position:relative;padding-left:11px;margin-bottom:3.5px;color:var(--g600);font-size:8.8pt;line-height:1.55}
+li::before{content:"·";position:absolute;left:2px;color:var(--g400);font-weight:800}
+li b,p b{color:var(--ink);font-weight:700}
+li.lead{color:var(--ink)}
+
+/* 성과 배지 */
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--line);
+      border-radius:2px;overflow:hidden;margin-bottom:2px}
+.kpi{padding:8px 9px;border-left:1px solid var(--line)}
+.kpi:first-child{border-left:none}
+.kpi .v{font-size:11.5pt;font-weight:800;letter-spacing:-.03em;color:var(--ink);
+        font-variant-numeric:tabular-nums;white-space:nowrap}
+.kpi .t{font-size:7.2pt;color:var(--g500);margin-top:3px;line-height:1.4}
+
+/* 역량 2열 */
+.cap{display:grid;grid-template-columns:1fr 1fr;gap:7px 18px}
+.cap div{font-size:8.6pt;color:var(--g600);line-height:1.52}
+.cap b{display:block;color:var(--ink);font-size:8.9pt;margin-bottom:1px}
+
+/* 프로젝트 */
+.proj{display:grid;grid-template-columns:82px 1fr;gap:14px;padding:10px 0;
+      border-bottom:1px solid var(--line);break-inside:avoid}
+.proj:last-of-type{border-bottom:none}
+.pdate{font-family:var(--mono);font-size:7.4pt;color:var(--g500);line-height:1.5;padding-top:2px}
+.ptitle{font-size:10.4pt;font-weight:800;letter-spacing:-.025em;margin-bottom:5px}
+.res{font-size:8.7pt;color:var(--ink);font-weight:600;margin-bottom:5px;
+     border-left:2px solid var(--blue);padding-left:8px}
+.grp{font-family:var(--mono);font-size:7pt;letter-spacing:.09em;text-transform:uppercase;
+     color:var(--g400);margin:6px 0 3px}
+.tech{font-family:var(--mono);font-size:7.1pt;color:var(--g400);margin-top:5px;line-height:1.5}
+.intro{font-size:8.9pt;color:var(--g600);line-height:1.62}
+.intro b{color:var(--ink)}
+a{color:var(--blue-dark);text-decoration:none}
+</style>
+</head>
+<body>
+
+<!-- ══════════ 이력서 ══════════ -->
+<section class="doc">
+  <div class="dhead">
+    <div class="dtitle">이력서</div>
+    <div class="dsub">일본어 원어민 · 일본어 공지작성·약관검토·영상 <b>7년+</b><br>일본 시장 <b>0 to 1</b> · 업무 개선 AI툴 개발/활용</div>
+  </div>
+
+  <div class="sec">
+    <div class="slab">Profile<b>인적 사항</b></div>
+    <table><tbody>
+      <tr><td class="k">이름</td><td><b>김우신</b> (Kim Woo Shin · 篠崎 雅信 Shinozaki Masanobu)</td></tr>
+      <tr><td class="k">생년월일</td><td class="num">1994.01.10</td></tr>
+      <tr><td class="k">연락처</td><td class="num">010-9707-3701 · kimboard@naver.com</td></tr>
+      <tr><td class="k">언어</td><td>일본어·한국어 모두 모국어 · 일본 출생 한일 혼혈 · JLPT N1 · JPT 940</td></tr>
+      <tr><td class="k">지원 부문</td><td><b>토스증권 Marketing Manager (Japan)</b></td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="sec">
+    <div class="slab">Education<b>학력</b></div>
+    <table>
+      <thead><tr><th style="width:96px">재학 기간</th><th style="width:112px">학교</th><th>전공</th><th style="width:104px">구분</th></tr></thead>
+      <tbody>
+        <tr><td class="num">2020.03 ~ 2022.02</td><td>경희사이버대학교</td><td>일본학과</td><td><b>편입·졸업 · 최종학력</b></td></tr>
+        <tr><td class="num">2014.03 ~ 2019.07</td><td>성공회대학교</td><td>일어일본학과 · 디지털콘텐츠 복수전공</td><td>중퇴</td></tr>
+        <tr><td class="num">2013.04 ~ 중퇴</td><td>専修大学 (일본)</td><td>경제학과</td><td>중퇴</td></tr>
+        <tr><td class="num">2011.03 ~ 2013.02</td><td>광성고등학교</td><td>-</td><td>졸업</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec">
+    <div class="slab">Experience<b>경력</b></div>
+    <div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px">
+        <div style="font-size:10.2pt;font-weight:800;letter-spacing:-.02em">펄어비스 (Pearl Abyss) · 콘솔 라이브 서비스 운영·일본어 담당</div>
+        <div class="num">2019.07 ~ 현재 (재직중) · 총 경력 7년+ (단일 재직)</div>
+      </div>
+      <ul>
+        <li class="lead">검은사막 콘솔 라이브 서비스 운영·일본어 담당: 일본 유저 대상 공지·약관·이벤트 문구를 <b>원어민으로 직접 작성</b>하고, 공식 SNS·유튜브 커뮤니케이션과 이벤트 캠페인을 기획·운영. 일본 시장 인사이트로 상품을 제안해 출시까지 주도.</li>
+        <li>일본 공식 X 리트윗 캠페인 <b>직접 기획·제안</b>: PS4 랭킹 1위를 소재로 도쿄 오피스와 실행, RT 약 1,000건 · 팔로워 약 1,500명 증가</li>
+        <li>리테일 패키지 <b>직접 제안·주도</b>: 일본 시장 인사이트로 기회 포착 후 글로벌 발매, 글로벌 신규 유저 183% · 웹 방문자 140% 증가</li>
+        <li>세대 전환기 매출 <b>210% 성장</b> · 일본 자금결제법 선제 검토: 환불 기준 수립, 법적 분쟁 0건·실환불 1건, 전환기 로드맵 설계</li>
+        <li>카탈로그 대규모 유입 성과 측정: 안착 기준 정의와 지역별 퍼널 분해, <b>유입 예측 대비 48% 초과 달성</b> 확인·이탈 구간 규명</li>
+        <li>유저 성장 지표 분석 → 가설 검증 → 개선 반영: 중상위 유저 약 30% 상위 진입, 오프라인 행사 일본 유저 전담 대면 피드백 수집</li>
+        <li>콘솔 커뮤니티 유입 동선 설계: 게임 내 접점별 커뮤니티 유입 동선과 쿠폰 이벤트를 어뷰징 방지·수량 산정까지 설계</li>
+        <li>격주 정기점검·업데이트 <b>140회+</b> 무분쟁 운영(7년+), 분기 단위 서비스 전략을 마스터시트로 수립</li>
+        <li>업무 개선을 위한 Python·생성형 AI 웹 툴 4종 개발/활용·공개: 한국어 잔류 문자열 검출로 <b>검수 90분→5분</b>, 팀 정기 프로세스로 정착</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="slab">Skills<b>보유 스킬</b></div>
+    <table><tbody>
+      <tr><td class="k">직무</td><td>일본어 원어민 카피·현지화, 일본향 크리에이티브 기획·제작, 공식 SNS·커뮤니티 운영, 이벤트 캠페인 기획, 가설·실험·검증, 일본 시장 리서치, 상품 기획</td></tr>
+      <tr><td class="k">툴</td><td>Excel, PowerPoint, Word, Slack, JIRA, Google Docs/Sheets, Google Analytics, PlayStation Partners, Microsoft Partner Center, Python, VS Code, 생성형 AI (Claude·GPT)</td></tr>
+      <tr><td class="k">언어·자격</td><td>일본어·한국어 원어민: 번역·통역·현지화 실무 · JLPT N1 (2025.07) · JPT 940점 (2017.12)</td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="sec">
+    <div class="slab">Award<b>수상 · 링크</b></div>
+    <table><tbody>
+      <tr><td class="k">수상</td><td>PlayStation Partner Awards 2020 Japan Asia: 한국 최초 콘솔 MMORPG 크로스플레이 · <b>팀 수상</b></td></tr>
+      <tr><td class="k">자동화 툴</td><td><a href="https://rladntls94-tech.github.io/OPtools">https://rladntls94-tech.github.io/OPtools</a> · 직접 개발·공개</td></tr>
+      <tr><td class="k">포트폴리오</td><td><a href="https://rladntls94-tech.github.io/toss-jp-marketing/">https://rladntls94-tech.github.io/toss-jp-marketing/</a> · 별첨 PDF 동일</td></tr>
+    </tbody></table>
+  </div>
+</section>
+
+<!-- ══════════ 경력기술서 ══════════ -->
+<section class="doc">
+  <div class="dhead">
+    <div class="dtitle">경력기술서</div>
+    <div class="dsub">펄어비스 (Pearl Abyss) · 콘솔 라이브 서비스 운영<br><b>2019.07 ~ 현재</b> (재직중) · 총 경력 7년+ (단일 재직)</div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">210%</div><div class="t">세대전환기 매출 성장<br>수익모델·상품 기획</div></div>
+    <div class="kpi"><div class="v">183%</div><div class="t">글로벌 신규 유저 증가<br>리테일 패키지 직접 제안</div></div>
+    <div class="kpi"><div class="v">1위</div><div class="t">일본 PS 스토어<br>PS Partner Awards 팀 수상</div></div>
+    <div class="kpi"><div class="v">30%</div><div class="t">중상위 유저 상위 진입<br>가설 검증→개선 반영</div></div>
+    <div class="kpi"><div class="v">90→5분</div><div class="t">검수 시간 단축<br>자동화 툴 직접 개발</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="slab">Summary<b>주요 경력 요약</b></div>
+    <div class="intro">
+      펄어비스에서 7년 넘게 검은사막 콘솔 라이브 서비스를 담당하며, PS4 론칭부터 크로스플레이, PS5/XBS 세대 전환 및 구세대 서비스 종료, 글로벌 계정 통합까지 <b>서비스 생애주기 전 구간</b>을 담당했습니다.<br>
+      핵심 업무는 (1) 일본을 포함한 글로벌 유저의 데이터·피드백을 분석해 문제를 정의하고, (2) 개발·기획·DB·정책·QA·플랫폼사 사이에서 이슈를 구조화해 의사결정 방향을 제안하며, (3) <b>일본 규제·유저 대응을 원어민으로서 직접 수행</b>하는 것이었습니다.<br>
+      라이브 서비스에서 쌓은 "유저 이해 → 가설 → 실험 → 개선 반영" 사이클과 일본 원어민으로서의 커뮤니케이션 역량을 토스증권 일본 시장 진입에도 같은 방식으로 살려, <b>일본 유저에게 닿는 마케팅</b>으로 기여하고자 합니다.
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="slab">Core<b>핵심 역량</b></div>
+    <div class="cap">
+      <div><b>일본 유저 리서치 · 현지화 · 규제 대응</b>일본 출생·일본어 모국어. 오프라인 행사 일본 유저 전담 대면 피드백 수집, 인게임·커뮤니티 상시 소통 등 정성 리서치와 공지·약관·이벤트 규약 현지화, 도쿄·LA 오피스 협업, 임원 출장 통역 수행.</div>
+      <div><b>데이터 기반 문제 발견 → 가설 → 실험 → 개선</b>유저 지표·CS·리뷰·결제 데이터를 정기 분석해 병목을 정의하고, 가설을 실험으로 검증한 뒤 개선을 실제 반영. 지표를 맹신하지 않고 원인·맥락을 규명.</div>
+      <div><b>상품 기획 · PMF·가치제안 검증</b>시장·유저 이해를 근거로 회사를 설득해 시작부터 출시까지 주도한 상품 기획, 수요 예측 기반 수익모델 설계로 상품 단위 성과를 창출.</div>
+      <div><b>우선순위 · 로드맵 · 이해관계자 조율</b>분기 단위 서비스 전략을 마스터시트로 수립. 세대전환기 업데이트 재개 시점을 판단해 전환 로드맵 설계. 개발·기획·프로그램·정책·QA·플랫폼사 협의 리딩.</div>
+      <div><b>리스크 · 규제 사전 관리</b>문제가 터지기 전에 구조를 설계. 사전 QA에서 미공유 스펙 변경을 직접 발견해 대응 체계 구축, 규제·환불 기준 선제 수립으로 분쟁 0건 유지.</div>
+      <div><b>AI · 자동화로 실무 문제 해결</b>Python·생성형 AI로 반복 실무를 자동화한 웹 툴 4종을 직접 개발·배포 · <a href="https://rladntls94-tech.github.io/OPtools">rladntls94-tech.github.io/OPtools</a> · 검수 시간 90분 → 5분.</div>
+    </div>
+  </div>
+
+  <div class="sec" style="border-bottom:2px solid var(--ink);padding-bottom:8px">
+    <div class="slab">Detail<b>경력 상세</b></div>
+    <div style="font-size:8.6pt;color:var(--g500)">펄어비스 · 2019.07 ~ 현재 · 프로젝트 7건</div>
+  </div>
+
+  <div class="proj">
+    <div class="pdate">2019.07<br>~ 현재</div>
+    <div>
+      <div class="ptitle">콘솔 라이브 서비스 정기 운영 <span style="font-weight:500;font-size:8pt;color:var(--g500)">7년+ · 개별 프로젝트와 병행</span></div>
+      <div class="grp">문제 정의 · 개선</div>
+      <ul>
+        <li>유저 성장 지표 분포를 분석해 성장 병목을 도출하고, 이벤트로 가설을 검증한 뒤 콘텐츠 개선을 반영: <b>중상위 유저 약 30%가 상위 구간 진입</b>. 플랫폼 카탈로그 대규모 유입 시점에는 안착 기준을 정의하고 지역별 퍼널을 분해해 <b>유입 예측 대비 48% 초과 달성</b>을 확인, 초반 이탈 구간을 규명해 개선 요청으로 연결</li>
+        <li>CS 반복 이슈를 FAQ화하고 정기 리포트·패치노트로 유저 커뮤니케이션 체계화</li>
+      </ul>
+      <div class="grp">일본 유저 · 현지화 · 규제</div>
+      <ul>
+        <li>일본어 공지·약관 현지화, 공식 유튜브 영상 기획·<b>일본어 스크립트 작성·직접 출연</b>, 글로벌 연회 일본 유저 전담 등 일본어 대응 전반</li>
+        <li>일본 유저 대상 인게임 소통·이벤트 운영, 유저 간 괴롭힘 판단 기준을 도쿄 오피스와 협업해 수립, 게임 내 재화 이상거래 적발·제재</li>
+        <li>X·Discord 커뮤니티 운영: 유입 설계, 이벤트, 점검·공지 포스팅 관리. 콘솔 환경의 채팅 진입 장벽을 문제로 정의해 게임 내 접점별 커뮤니티 유입 동선과 쿠폰 이벤트를 설계·제안</li>
+      </ul>
+      <div class="grp">실행 · 자동화 · 표준화</div>
+      <ul>
+        <li>격주 정기점검·업데이트 <b>140회+</b> 운영 / 한국어 잔류 검출 툴 도입으로 검수 90분→5분, 팀 프로세스로 정착</li>
+        <li>분기 단위 서비스 전략 수립: 시즈널 이벤트·업데이트 시기·상품 배치를 마스터시트로 계획</li>
+        <li>주말·심야 모니터링 공백 해소: 외부 모니터링 팀에 프로세스 전수, 유럽·북미·아시아 3권역 커버 체계 설계</li>
+        <li>CrowdStrike 글로벌 장애 새벽 긴급 대응: 구매 API 단절 원인 규명·해결</li>
+      </ul>
+      <div class="tech">Slack · Google Docs/Sheets · Excel · JIRA · 자체 어드민 툴 · 사내 BI 툴 · Python · VS Code · 생성형 AI</div>
+    </div>
+  </div>
+
+  <div class="proj">
+    <div class="pdate">2026.03<br>~ 2026.06</div>
+    <div>
+      <div class="ptitle">붉은사막 신작 준비팀 (파견) <span style="font-weight:500;font-size:8pt;color:var(--g500)">4개월</span></div>
+      <div class="res">스팀 리뷰 2,000건당 긍정 비율 22% 개선 · PS 리뷰 평점 3.7 → 4.2</div>
+      <ul>
+        <li>테스트 플레이·리뷰 추이를 언어·국가별로 분석해 이슈 대응 프로세스 수립, CS·리뷰 모니터링 및 QA 재현</li>
+        <li>CS·포럼 기반 피드백 수집의 한계를 데이터로 증명하고, 운영툴 기반 <b>정량 수집 프로세스로 전환 주도</b>: 기획·개발팀에 직접 요청</li>
+      </ul>
+      <div class="tech">Slack · Google Docs/Sheets · Excel · Steam · 생성형 AI</div>
+    </div>
+  </div>
+
+  <div class="proj">
+    <div class="pdate">2024.11<br>~ 2025.08</div>
+    <div>
+      <div class="ptitle">PS4/XB One → PS5/XBS 플랫폼 전환 및 서비스 종료 <span style="font-weight:500;font-size:8pt;color:var(--g500)">9개월</span></div>
+      <div class="res">전환기 매출 210% 성장을 법적 분쟁 0건으로 통과 · 크래시율 8.4%→0.9% · 구세대 이탈 예상 8~10% 대비 실제 4~6%</div>
+      <ul>
+        <li>역대 패키지·DLC 판매 데이터 분석으로 차세대 전용 패키지 구성 제안</li>
+        <li>핵심 상품 수요 예측 기반 수익모델 기획: 이상거래 동향 경험을 반영해 업데이트 3주 후 상품 배치</li>
+        <li>각국 환불 규정·타사 종료 사례 조사로 환불 기준 수립, <b>일본 자금결제법 선제 검토</b>로 실환불 1건</li>
+        <li>차세대 출시·업데이트 병행 리스크를 판단해 업데이트 재개 시점 등 전환기 로드맵 수립</li>
+        <li>유저 이탈 방어 로드맵 선공개·안내 영상 기획, <b>일본어 담당자로 직접 출연</b></li>
+      </ul>
+      <div class="tech">Slack · Excel · 일본 자금결제법 · PlayStation Partners · Microsoft Partner Center · Word · JIRA · 생성형 AI</div>
+    </div>
+  </div>
+
+  <div class="proj">
+    <div class="pdate">2025.06<br>~ 2025.12</div>
+    <div>
+      <div class="ptitle">글로벌 멀티 플랫폼 웹 계정 통합 <span style="font-weight:500;font-size:8pt;color:var(--g500)">6개월</span></div>
+      <div class="res">CS 유입 예측치 대비 54% 억제 · 이관 당일 이슈 0건 · 점검 2시간 조기 종료</div>
+      <ul>
+        <li>사전 QA에서 <b>미공유 스펙 변경 2건 직접 발견</b>: 쿠폰 수령 방식 변경·연동 해제 시 6개월 잠금 → 사전 공지·CS 템플릿·지원책 설계</li>
+        <li>선행 적용 국가의 결제·쿠폰·계정 초기화 이슈를 알파 환경에서 재현하고 FAQ 선제 작성</li>
+        <li>홈페이지 개편에 따른 약관·정책·규약 개편: 웹·정책·QA 협업, 점검 당일 체크리스트 총괄 및 미국 오피스 실시간 협업</li>
+      </ul>
+      <div class="tech">Slack · Google Docs/Sheets · PowerPoint · Excel · 운영정책·약관·EULA 문서</div>
+    </div>
+  </div>
+
+  <div class="proj">
+    <div class="pdate">2020.05<br>~ 2020.11</div>
+    <div>
+      <div class="ptitle">콘솔 리테일 패키지 기획 <span style="font-weight:500;font-size:8pt;color:var(--g500)">6개월 · 0 to 1</span></div>
+      <div class="res">글로벌 신규 유저 183% 증가 · 웹 방문자 140% 상승 · 패키지 유저 D30 잔존율 38%</div>
+      <ul>
+        <li>일본에서 자라며 체득한 <b>실물 패키지 선호 문화를 근거로 직접 제안</b>해 시작한 프로젝트: 설득부터 출시까지 주도. 가설을 설득력 있게 구조화한 사례</li>
+        <li>판매 데이터 분석 기반 구성품 선별, 전용 아이템·에디션 기획</li>
+        <li>오프라인 판매 채널·에디션 랜딩 페이지 기획, 글로벌 홍보 전개</li>
+      </ul>
+      <div class="tech">Google Analytics · Google Sheets · Excel · PowerPoint · JIRA · 자체 어드민 툴</div>
+    </div>
+  </div>
+
+  <div class="proj">
+    <div class="pdate">2019.10<br>~ 2020.05</div>
+    <div>
+      <div class="ptitle">PlayStation · Xbox 크로스플레이 론칭 <span style="font-weight:500;font-size:8pt;color:var(--g500)">7개월</span></div>
+      <div class="res">한국 최초 콘솔 MMORPG 크로스플레이 · PlayStation Partner Awards 2020 팀 수상 · 복귀 350% · 신규 250% · 일간 활성 126%</div>
+      <ul>
+        <li>PS/XB 제출 프로세스 파악, 출시 일정 역산·마스터시트 기반 부서별 팔로업·버전 동기화 조율</li>
+        <li>플랫폼 간 인게임 경제 데이터 동기화 이슈 선제 발견, 기획·DB·프로그램팀 협의 리딩</li>
+        <li>부정 자동화 프로그램 대응 프로세스 설계: 신고 → 모니터링 → 검증 → 증거 → 제재, <b>후속 분쟁 0건</b></li>
+      </ul>
+      <div class="tech">Slack · Excel · Word · JIRA · 자체 어드민 툴 · PowerPoint · 일본 심의등급 CERO</div>
+    </div>
+  </div>
+
+  <div class="proj">
+    <div class="pdate">2019.07<br>~ 2019.11</div>
+    <div>
+      <div class="ptitle">PS4 론칭 및 서비스 운영 <span style="font-weight:500;font-size:8pt;color:var(--g500)">4개월</span></div>
+      <div class="res">일본 PS 스토어 랭킹 1위 · 론칭 4주 최대 동시 접속 90% 유지 · CS 인입 예상 30% → 실제 12%</div>
+      <ul>
+        <li><b>PS4 랭킹 1위 기념 리트윗 캠페인 직접 기획·제안</b>, 도쿄 오피스 협업 실행: 리트윗 약 1,000건 · 팔로워 약 1,500명 증가</li>
+        <li>스토어 구매테스트 프로세스 구축, 한/영/독/불 운영 R&amp;R 배분</li>
+        <li>선행 플랫폼 데이터 분석 기반 FAQ 선제 배포로 CS 인입 억제</li>
+        <li>일본 심의등급 CERO 확인 및 출시 요건 대응, 약관·정책 일본어 현지화</li>
+      </ul>
+      <div class="tech">Slack · Google Docs/Sheets · PowerPoint · Excel · 운영정책·약관·EULA 문서</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
